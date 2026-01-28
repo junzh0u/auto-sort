@@ -121,11 +121,43 @@ function containsMarker(line: string, marker: string): boolean {
 }
 
 function sortLines(lines: string[], caseSensitive: boolean): string[] {
-  return [...lines].sort((a, b) => {
-    const aVal = caseSensitive ? a : a.toLowerCase();
-    const bVal = caseSensitive ? b : b.toLowerCase();
-    return aVal.localeCompare(bVal);
+  // Split into blocks separated by empty lines
+  const blocks: string[][] = [];
+  let currentBlock: string[] = [];
+
+  for (const line of lines) {
+    if (line.trim() === '') {
+      // Empty line - save current block and start new one
+      if (currentBlock.length > 0) {
+        blocks.push(currentBlock);
+        currentBlock = [];
+      }
+      blocks.push([line]); // Keep empty line as its own "block"
+    } else {
+      currentBlock.push(line);
+    }
+  }
+
+  // Don't forget the last block
+  if (currentBlock.length > 0) {
+    blocks.push(currentBlock);
+  }
+
+  // Sort each non-empty block individually
+  const sortedBlocks = blocks.map((block) => {
+    // Skip sorting if it's just an empty line
+    if (block.length === 1 && block[0].trim() === '') {
+      return block;
+    }
+    return [...block].sort((a, b) => {
+      const aVal = caseSensitive ? a : a.toLowerCase();
+      const bVal = caseSensitive ? b : b.toLowerCase();
+      return aVal.localeCompare(bVal);
+    });
   });
+
+  // Flatten back to single array
+  return sortedBlocks.flat();
 }
 
 export function deactivate() {}
