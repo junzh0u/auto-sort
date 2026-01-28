@@ -1,0 +1,64 @@
+{
+  "name": "auto-sort",
+  "displayName": "Auto Sort",
+  "description": "Automatically sort lines between markers on save",
+  "version": "0.0.1",
+  "publisher": "junz",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Auto Sort",
+      "properties": {
+        "autoSort.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable auto-sorting on save"
+        },
+        "autoSort.startMarker": {
+          "type": "string",
+          "default": "# <auto-sort begin>",
+          "description": "The marker text that indicates the start of a sortable block"
+        },
+        "autoSort.endMarker": {
+          "type": "string",
+          "default": "# <auto-sort end>",
+          "description": "The marker text that indicates the end of a sortable block"
+        },
+        "autoSort.caseSensitive": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether sorting should be case-sensitive"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "autoSort.sortNow",
+        "title": "Auto Sort: Sort Current File"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
