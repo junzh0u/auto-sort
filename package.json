@@ -4,6 +4,23 @@
   "description": "Automatically sort lines between markers on save",
   "version": "0.0.1",
   "publisher": "junz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/junz/auto-sort"
+  },
+  "bugs": {
+    "url": "https://github.com/junz/auto-sort/issues"
+  },
+  "homepage": "https://github.com/junz/auto-sort#readme",
+  "keywords": [
+    "sort",
+    "auto-sort",
+    "formatter",
+    "organize",
+    "alphabetize"
+  ],
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.74.0"
   },
