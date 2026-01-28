@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Background -->
+  <rect width="128" height="128" rx="16" fill="#2D5A9E"/>
+
+  <!-- Sorted lines (left side) -->
+  <rect x="20" y="30" width="50" height="8" rx="4" fill="#FFFFFF"/>
+  <rect x="20" y="50" width="40" height="8" rx="4" fill="#FFFFFF"/>
+  <rect x="20" y="70" width="30" height="8" rx="4" fill="#FFFFFF"/>
+  <rect x="20" y="90" width="20" height="8" rx="4" fill="#FFFFFF"/>
+
+  <!-- Arrow (right side) -->
+  <path d="M90 35 L90 93 M80 83 L90 93 L100 83"
+        stroke="#4FC3F7"
+        stroke-width="6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+</svg>
