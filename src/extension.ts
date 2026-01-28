@@ -114,9 +114,10 @@ function findSortBlocks(lines: string[], startMarker: string, endMarker: string)
 }
 
 function containsMarker(line: string, marker: string): boolean {
-  // Simple trim and case-insensitive comparison
-  const trimmed = line.trim();
-  return trimmed.toLowerCase() === marker.toLowerCase();
+  // Normalize whitespace: collapse multiple spaces to single space and trim
+  const normalizeLine = line.trim().replace(/\s+/g, ' ').toLowerCase();
+  const normalizeMarker = marker.trim().replace(/\s+/g, ' ').toLowerCase();
+  return normalizeLine === normalizeMarker;
 }
 
 function sortLines(lines: string[], caseSensitive: boolean): string[] {
