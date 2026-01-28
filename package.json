@@ -3,7 +3,7 @@
   "displayName": "Auto Sort",
   "description": "Automatically sort lines between markers on save",
   "version": "0.0.1",
-  "publisher": "junz",
+  "publisher": "JunZhou",
   "license": "MIT",
   "repository": {
     "type": "git",
