@@ -7,12 +7,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/junz/auto-sort"
+    "url": "https://github.com/junzh0u/auto-sort"
   },
   "bugs": {
-    "url": "https://github.com/junz/auto-sort/issues"
+    "url": "https://github.com/junzh0u/auto-sort/issues"
   },
-  "homepage": "https://github.com/junz/auto-sort#readme",
+  "homepage": "https://github.com/junzh0u/auto-sort#readme",
   "keywords": [
     "sort",
     "auto-sort",
